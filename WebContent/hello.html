@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table id="tb">
+		<tr>
+			<td>hello</td>
+			<td>world</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		var tb = document.getElementById("tb");
+		var tr = tb.createElement("tr");
+		alert();
+		var td1 = tr.createElement("td");
+		var td2 = tr.createElement("td");
+		tr.appendChild(td1);
+		tr.appendChild(td2);
+		tb.appendChild(tr);
+	</script>
+</body>
+</html>

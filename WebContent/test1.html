@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#d").mouseover(function(e) {
+			$(this).text(e.pageX + " , " + e.pageY);
+		});
+		$.each([2, 4, 6, 8], function(i, n) {
+			alert(i + ":" + (n + 1));
+		})
+	})
+</script>
+</head>
+<body id="d">
+	放在我上面
+</body>
+</html>

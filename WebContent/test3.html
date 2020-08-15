@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>aaa</title>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#btn").click(function() {
+			$("#tb tr:even").css("backgroundColor", "yellow");
+			$("#tb tr:odd").css("backgroundColor", "red");
+		});
+		$("#tb tr").mouseover(function() {
+			$("#tb tr").css("backgroundColor", "");
+			$(this).css("backgroundColor", "yellow");
+		})
+	})
+</script>
+</head>
+<body>
+	<input type="button" name="name" value="设置表格样式" id="btn" />
+	<table id="tb" border="1">
+		<tr>
+			<td>姓名</td>
+			<td>成绩</td>
+			<td>姓名</td>
+			<td>成绩</td>
+		</tr>
+		<tr>
+			<td>tom</td>
+			<td>100</td>
+			<td>tom</td>
+			<td>100</td>
+		</tr>
+		<tr>
+			<td>jim</td>
+			<td>99</td>
+			<td>jim</td>
+			<td>99</td>
+		</tr>
+		<tr>
+			<td>john</td>
+			<td>98</td>
+			<td>john</td>
+			<td>98</td>
+		</tr>
+		<tr>
+			<td>jason</td>
+			<td>97</td>
+			<td>jason</td>
+			<td>97</td>
+		</tr>
+		<tr>
+			<td>aaa</td>
+			<td>97</td>
+			<td>aaa</td>
+			<td>97</td>
+		</tr>
+		<tr>
+			<td>平均分</td>
+			<td>98</td>
+			<td>平均分</td>
+			<td>98</td>
+		</tr>
+	</table>
+</body>
+</html>

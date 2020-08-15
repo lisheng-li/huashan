@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.aaa {
+		color: red;
+	}
+	.bbb {
+		color: yellow;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#submit1").click(function() {
+			var text1 = $("#Text1").val();
+			var r = $("#r1").is(":checked")?"nan":"nv";
+			var checkbox1 = $("#Checkbox1").is(":checked")?"yi":"wei";
+			$("#tip").css("display", "block")
+				.html(text1 + "<br/>" + r + "<br/>"+ checkbox1);
+		});
+		$(".aaa").mouseover(function() {
+			$(this).toggleClass("bbb");
+		});
+	})
+	
+</script>
+</head>
+<body>
+	<div class="content">
+		<input type="text" class="txt" id="Text1"/><br/>
+		<input type="radio" name="sex" id="r1" value="nan">nan
+		<input type="radio" name="sex" id="r2" value="nv">nv<br/>
+		<input type="checkbox" id="Checkbox1"><br/>
+		<input id="submit1" type="button" value="submit"><br/>
+	</div>
+	<div id="tip"></div>
+	<div class="aaa">title</div>
+</body>
+</html>

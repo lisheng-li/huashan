@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#add").click(function() {
+			$("table tbody").append("<tr><td>***</td><td>***</td></tr>");
+		});
+		$("#remove_two").click(function() {
+			$("table tbody tr:eq(1)").remove();
+		});
+		$("#change_title").click(function() {
+			$("table tbody tr td").css({"background":"#000", "color":"#fff"});
+		});
+		$("#clone_last").click(function() {
+			$("table tbody").append($("table tbody tr:last").clone());
+		});
+	})
+</script>
+</head>
+<body>
+	<table id="table" border="1" cellpadding="5" cellspacing=0>
+		<thead>
+			<tr>
+				<td>书名</td>
+				<td>价格</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>看得见风景的房间</td>
+				<td>¥30.00</td>
+			</tr>
+			<tr>
+				<td>60个瞬间</td>
+				<td>¥32.00</td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<button id="add">add row</button>
+	<button id="remove_two">remove row2</button>
+	<button id="change_title">change title</button>
+	<button id="clone_last">copy last row</button>
+</body>
+</html>

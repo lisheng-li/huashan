@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#b").click(function() {
+			var val = $("input:checked").val();
+			switch(val) {
+				case 'a':
+					$("h1").html("a");
+					break;
+				case 'b':
+					$("h1").html("b");
+					break;
+				case 'c':
+					$("h1").html("c");
+					break;
+				case 'd':
+					$("h1").html("d");
+					break;
+				case 'e':
+					$("h1").html("e");
+					break;
+			}
+		});
+	})
+</script>
+</head>
+<body>
+	<h1>select furit</h1>
+	<input type="radio" name="furit" value="a" checked/>a
+	<input type="radio" name="furit" value="b" />b
+	<input type="radio" name="furit" value="c" />c
+	<input type="radio" name="furit" value="d" />d
+	<input type="radio" name="furit" value="e" />e
+	
+	<input type="button" id="b" value="change" />
+</body>
+</html>

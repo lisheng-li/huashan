@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#tbStu a{
+		background:red;
+	}
+	#tbStu b{
+		background:yellow;
+	}
+</style>
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		alert($("#form1 :input[type != 'checkbox']").length);
+		alert($("#form1 :button").length);
+	})
+</script>
+</head>
+<body>
+	<form id="form1">
+		<textarea class="">textarea</textarea>
+		<select><option value="0">0-000</option></select>
+		<input type="text" value="text"/>
+		<input type="checkbox" />
+		<input type="button" />
+		<button>sss</button>
+	</form>
+</body>
+</html>

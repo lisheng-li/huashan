@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>aaa</title>
+<meta charset="UTF-8">
+<style>
+td{
+background-color: #42668f;
+height: 50px;
+width: 100px;
+}
+.a{
+background-color: red;
+}
+</style>
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("td").mouseover(function() {
+			$(this).addClass("a");
+		}).mouseout(function() {
+			$("td").removeClass("a");
+		})
+	})
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>资讯动态</td>
+			<td>产品世界</td>
+			<td>市场营销</td>
+		</tr>
+	</table>
+</body>
+</html>
