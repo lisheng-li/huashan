@@ -1,2 +1,35 @@
-huashanjianfa
-wogailelleellele
+#!/bin/bash
+
+#----変数代入------------------------------
+LOG_FILE=/xxxxxx/$0.log #ログ出力ファイル
+INTERVAL=120 #監視間隔(秒)
+ERROR=90 #エラー閾値(%)
+DATE=$(date +'%Y/%m/%d %H:%M:%S') #システム時刻
+PROCESS_NAME='mintty' #PROCESS名
+
+function catch() {
+  echo "${DATE} ERROR: the shell is stoping..." >> ${LOG_FILE}
+  exit
+}
+
+trap catch exit
+
+#--- メイン処理 ---------------------------
+while true
+do
+  TOTAL=$(free | grep "Mem:" | awk '{print $2}') #総メモリー
+  REMAINING=$(free | grep "Mem:" | awk '{print $7}') #残メモリー
+  USED=`expr ${TOTAL} - ${REMAINING}`
+  RATE=`echo | awk "{print 100*$USED/$TOTAL}"`
+  
+  #メモリ使用率判定処理
+  if [ ${RATE} -gt ${ERROR} ];then
+    echo "${DATE} ERROR: memory used 80% over" >> ${LOG_FILE}
+    PIDS=$(ps -ef|grep "$PROCESS_NAME"|grep -v grep|grep -v PPID|awk '{ print $2}')
+    for ID in ${PIDS}
+    do
+      kill -9 ${ID}
+    done
+  fi
+  sleep ${INTERVAL}
+done
